@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)file:///C:/Users/upsc/Desktop/IIII.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Presentation Competition</title>
+    <link href="./Idea Presentation_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Idea Presentation_files/all.min.css">
+    <style>
+        /* Custom CSS styles */
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            font-family: 'Arial Black', sans-serif;
+            display: inline-block;
+            animation: blinkingText 1.5s infinite;
+            margin-top: 5px;
+        }
+        
+        header p {
+            font-size: 1rem;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1001;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-toggle i {
+            font-size: 1.8rem;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background-color: #007bff;
+            z-index: 998;
+            padding-top: 80px;
+            transition: 0.5s;
+            overflow-y: auto;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        
+        nav.active {
+            right: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            padding: 20px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        .btn-primary {
+            background-color: #fff;
+            border-color: #fff;
+            color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
+        main {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+        
+        section {
+            padding: 50px 20px;
+            margin-top: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background-color: #fff;
+        }
+        
+        .floating-box {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        
+        .section-content {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn-secondary {
+            background-color: #ff69b4;
+            border-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d14285;
+        }
+        
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        
+        .event-details {
+            background-color: #87ceeb;
+            color: #333;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        
+        .event-details h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .event-details p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-window {
+            position: fixed;
+            top: 50%;
+            right: -400px;
+            transform: translate(-50%, -50%);
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            z-index: 1002;
+            font-family: Arial, sans-serif;
+            transition: right 0.5s;
+        }
+        
+        footer {
+            background-color: #ffa500;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .footer-icons {
+            margin-top: 10px;
+        }
+        
+        .footer-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        @keyframes blinkingText {
+            0% {
+                color: #fff;
+            }
+            50% {
+                color: #ff69b4;
+            }
+            100% {
+                color: #fff;
+            }
+        }
+        
+        .compete-section {
+            background-color: #87ceeb;
+            padding: 50px 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        
+        .compete-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .compete-subsection {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        
+        .compete-subsection h3 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .compete-subsection p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .animated-window {
+            display: none;
+            background-color: rgba(255, 105, 180, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .animated-window p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .animated-window a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .know-more-btn {
+            background-color: #ff69b4;
+            border-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .know-more-btn:hover {
+            background-color: #d14285;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Idea Presentation_files/WhatsApp Image 2024-02-09 at 22.07.01.jpeg" alt="Competition Logo">
+        </div>
+        <h1>Idea Presentation Competition</h1>
+        <p>Join us and showcase your creativity!</p>
+        <!-- Menu toggle button -->
+        <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="file:///C:/Users/upsc/Desktop/IIII.html#home">Home</a></li>
+                <li><a href="file:///C:/Users/upsc/Desktop/IIII.html#about">About</a></li>
+                <li><a href="https://drive.google.com/file/d/1SNy-8FzvXFUEpLVicIdoFfSAPgHK7nlF/view?usp=drive_link" target="_blank">Terms</a></li>
+                <li><a href="file:///C:/Users/upsc/Desktop/IIII.html#contact" onclick="showContactWindow()">Contact</a></li>
+                <li><a href="https://forms.gle/1JSs6TA8bALa9rjp6" target="_blank" class="btn-primary">Register Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="floating-box">
+                <h2 class="section-title">DECODE YOUR IDEAS</h2>
+                <p class="section-content">Join us for the ultimate idea presentation competition and showcase your creativity!</p>
+                <a href="https://forms.gle/1JSs6TA8bALa9rjp6" class="btn-secondary" target="_blank">Register now</a>
+            </div>
+        </section>
+        <section id="about">
+            <div class="floating-box">
+                <h2 class="section-title">About</h2>
+                <p class="section-content quote">"Creativity is thinking up new things. Innovation is doing new things."</p>
+                <p class="section-content">This competition aims to provide a platform for participants to present their innovative ideas and solutions.</p>
+            </div>
+        </section>
+        <section id="compete" class="compete-section">
+            <div class="compete-subsection">
+                <h3>Business Quiz</h3>
+                <p>A fun and challenging quiz that tests your knowledge on various aspects of business and entrepreneurship.</p>
+                <a href="file:///C:/Users/upsc/Desktop/IIII.html#" class="know-more-btn" onclick="showAnimatedWindow(&#39;quizWindow&#39;)">Know more</a>
+                <div id="quizWindow" class="animated-window">
+                    <p>Get ready to test your business acumen with our exciting Business Quiz! This quiz covers topics ranging from business strategy to market trends. Are you up for the challenge?</p>
+                </div>
+            </div>
+            <div class="compete-subsection">
+                <h3>Presentation</h3>
+                <p>Prepare a captivating presentation to showcase your innovative ideas and solutions to a panel of judges.</p>
+                <a href="file:///C:/Users/upsc/Desktop/IIII.html#" class="know-more-btn" onclick="showAnimatedWindow(&#39;presentationWindow&#39;)">Know more</a>
+                <div id="presentationWindow" class="animated-window">
+                    <p>Whether it's a PowerPoint presentation or a physical model, this is your chance to impress the judges with your creativity and presentation skills. Are you ready to shine?</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Contact floating window -->
+    <div class="contact-window" id="contactWindow">
+        <h2 style="color: #007bff;">Feel free to contact us</h2>
+        <div class="contact-icons">
+            <p>Kiran Gaikwad: <a href="tel:+918999649495" style="color: #007bff;">8999649495</a></p>
+            <p>Apurva Varude: <a href="tel:+919322354038" style="color: #007bff;">9322354038</a></p>
+        </div>
+        <button onclick="hideContactWindow()">Close</button>
+    </div>
+    <footer>
+        <div class="container">
+            <p>© 2024 Idea Presentation Competition. All rights reserved.</p>
+            <div class="footer-icons">
+                <a href="tel:+918999649495"><i class="fas fa-phone"></i></a>
+                <a href="mailto:info@example.com"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+
+        function showContactWindow() {
+            document.getElementById('contactWindow').style.right = '0';
+        }
+
+        function hideContactWindow() {
+            document.getElementById('contactWindow').style.right = '-400px';
+        }
+
+        function showAnimatedWindow(id) {
+            var window = document.getElementById(id);
+            window.style.display = 'block';
+            setTimeout(function() {
+                window.style.display = 'none';
+            }, 3000); // Adjust the duration as needed
+        }
+    </script>
+
+
+</body></html>
